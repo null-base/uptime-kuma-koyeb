@@ -1,11 +1,9 @@
 # Builder image
 FROM docker.io/alpine as BUILDER
 
-ARG LITESTREAM_VERSION="0.5.2"
-
 RUN apk add --no-cache curl jq tar
 
-RUN curl -L https://github.com/benbjohnson/litestream/releases/download/v${LITESTREAM_VERSION}/litestream-${LITESTREAM_VERSION}-linux-amd64.tar.gz -o litestream.tar.gz && tar xzvf litestream.tar.gz
+RUN curl -L https://github.com/benbjohnson/litestream/releases/download/v0.5.2/litestream-0.5.2-linux-arm64.tar.gz -o litestream.tar.gz && tar xzvf litestream.tar.gz
 # Main image
 FROM docker.io/louislam/uptime-kuma as KUMA
 
