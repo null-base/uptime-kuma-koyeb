@@ -3,7 +3,7 @@ FROM docker.io/alpine as BUILDER
 
 RUN apk add --no-cache curl jq tar
 
-RUN curl -L https://github.com/benbjohnson/litestream/releases/download/v0.3.13/litestream-v0.3.13-linux-arm64.tar.gz -o litestream.tar.gz && tar xzvf litestream.tar.gz
+RUN curl -L https://github.com/benbjohnson/litestream/releases/download/v0.3.13/litestream-v0.3.13-linux-amd64.tar.gz -o litestream.tar.gz && tar xzvf litestream.tar.gz
 
 # Main image
 FROM docker.io/louislam/uptime-kuma as KUMA
